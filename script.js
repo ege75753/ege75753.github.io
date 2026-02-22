@@ -93,6 +93,36 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // --- Discord Popup Logic --- //
+    const discordIcon = document.querySelector('.fa-discord').closest('a');
+    const discordModal = document.getElementById('discord-modal');
+    const closeDiscord = document.getElementById('close-discord');
+
+    if (discordIcon && discordModal) {
+        discordIcon.addEventListener('click', (e) => {
+            e.preventDefault();
+            discordModal.classList.remove('hidden');
+            setTimeout(() => discordModal.classList.add('active'), 50);
+
+            // Re-trigger glitch animation
+            const glitchText = discordModal.querySelector('.glitch');
+            if (glitchText) {
+                glitchText.style.animation = 'none';
+                void glitchText.offsetWidth; // trigger reflow
+                glitchText.style.animation = null;
+            }
+        });
+    }
+
+    if (closeDiscord && discordModal) {
+        closeDiscord.addEventListener('click', () => {
+            discordModal.classList.remove('active');
+            setTimeout(() => {
+                discordModal.classList.add('hidden');
+            }, 400); // match CSS transition duration
+        });
+    }
+
     // --- Dynamic Modal System --- //
     const detailBtns = document.querySelectorAll('.detail-btn');
     const modalOverlay = document.getElementById('details-modal');
