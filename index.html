@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERAKAY_ // CENTRAL_SYSTEM</title>
+    <meta name="description" content="CLASSIFIED SYSTEM. UNAUTHORIZED ACCESS RECORDED.">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Michroma&family=Syncopate:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- Decorative Left Panel mirroring the reference image's left sidebar -->
+    <aside class="dec-panel-left">
+        <div class="keyword-list">
+            <p>keyword :</p>
+            <ul>
+                <li>-secret</li>
+                <li>-maiden</li>
+                <li>-verakay</li>
+                <li>-purple rain</li>
+                <li>-jin</li>
+                <li>-bearfours</li>
+            </ul>
+        </div>
+
+        <div class="dec-image-box">
+            <div class="glitch-img"></div>
+            <div class="cross"></div>
+        </div>
+
+        <div class="dec-date" title="LOCAL SYSTEM TIME">
+            <span id="sys-hour" class="d1">00</span>:<span id="sys-min" class="d2">00</span><span id="sys-sec"
+                class="d-tiny">00</span><br>
+            <span id="sys-day" class="d3">00</span>.<span id="sys-month" class="d4">00</span>
+        </div>
+
+        <div class="color-palette">
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+            <div class="c5"></div>
+            <div class="c6"></div>
+        </div>
+
+        <div class="data-stream">
+            <p class="stream-title">UPLINK_DATA</p>
+            <p class="stream-value" id="stream-readout">0x000A8F</p>
+            <div class="mini-bar-graph" id="mini-bars">
+                <div class="mb"></div>
+                <div class="mb"></div>
+                <div class="mb"></div>
+                <div class="mb"></div>
+                <div class="mb"></div>
+            </div>
+        </div>
+
+        <div class="barcode-wrapper">
+            <div class="barcode"></div>
+            <p>PROSTHETICVISUAL</p>
+        </div>
+    </aside>
+
+    <!-- Main Central Area -->
+    <main class="center-stage">
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="scroll-section">
+            <div class="hero-container">
+                <!-- Rotating Text -->
+                <div id="rotating-text-container" class="glitch-wrapper">
+                    <h1 id="main-word" class="hero-text glitch" data-text="HELLO WORLD">HELLO WORLD</h1>
+                    <div class="sub-word">[ STATUS: OMNIPRESENT ]</div>
+                </div>
+
+                <div class="decorative-crosshair">
+                    <div class="hline"></div>
+                    <div class="vline"></div>
+                    <div class="ring r1"></div>
+                    <div class="ring r2"></div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- 2. PROJECTS SECTION -->
+        <section id="projects" class="scroll-section">
+            <h2 class="section-title">MY PROJECTS</h2>
+            <div class="grid-layout">
+                <!-- MSN Messenger Revival -->
+                <div class="data-card project-card">
+                    <div class="card-image img-msn">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>MSNMessenger Revive</h3>
+                    <p>A full client and server revival project restoring the classic early 2000s chat experience.
+                        Custom networking, lobby system, and integrated games like Paint.IO and Gartic.</p>
+                    <div class="card-buttons">
+                        <a href="https://github.com" class="card-btn open-btn" target="_blank"><i
+                                class="fa-brands fa-github"></i> OPEN</a>
+                        <button class="card-btn detail-btn" data-project="msn"><i class="fa-solid fa-folder-open"></i>
+                            DETAILS</button>
+                    </div>
+                </div>
+
+                <!-- Celestial Roblox -->
+                <div class="data-card project-card">
+                    <div class="card-image img-celestial">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Celestial Executor</h3>
+                    <p>A high-performance Roblox script execution platform. Deep engine hooks, custom lua environment,
+                        and advanced bypass capabilities.</p>
+                    <div class="card-buttons">
+                        <button class="card-btn locked-btn"><i class="fa-solid fa-lock"></i> LOCKED</button>
+                        <button class="card-btn detail-btn" data-project="celestial"><i
+                                class="fa-solid fa-folder-open"></i> DETAILS</button>
+                    </div>
+                </div>
+
+                <!-- CS2 External -->
+                <div class="data-card project-card">
+                    <div class="card-image img-cs2">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h3>_not_done_</h3>
+                    <p>Out-of-process memory reader for Counter-Strike 2. Features kernel-level handles, minimal system
+                        footprint, and real-time radar mapping without hooking.</p>
+                    <div class="card-buttons">
+                        <button class="card-btn locked-btn"><i class="fa-solid fa-lock"></i> LOCKED</button>
+                        <button class="card-btn detail-btn" data-project="cs2"><i class="fa-solid fa-folder-open"></i>
+                            DETAILS</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TERMINAL SECTION -->
+        <section id="footer-data" class="scroll-section">
+            <h2 class="section-title">UPLINK PORTAL</h2>
+            <div class="grid-layout" style="grid-template-columns: 1fr;">
+                <div class="data-card" style="text-align: center; border-color: var(--accent);">
+                    <h3>ESTABLISH CONNECTION</h3>
+                    <p style="margin-bottom: 2rem;">Awaiting manual override code.</p>
+                    <div class="hex-grid-small" style="margin: 0 auto; width: 100px;"></div>
+                </div>
+            </div>
+
+            <!-- Social Icons now act as footer -->
+            <div class="social-wrapper">
+                <a href="https://github.com" class="social-icon" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://discord.com" class="social-icon" target="_blank"><i
+                        class="fa-brands fa-discord"></i></a>
+                <a href="https://spotify.com" class="social-icon" target="_blank"><i
+                        class="fa-brands fa-spotify"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Corner Diagnostics moved to fixed position outside main -->
+    <div class="diag-top-right" style="position: fixed;">
+        <i class="fa-solid fa-satellite-dish"></i> SYS_ACTIVE<br>
+        SEC_LVL: NULL
+    </div>
+    <div class="diag-bottom-right" style="position: fixed;">
+        <div class="hex-grid-small"></div>
+        MEM_ALLOC: <span id="mem-usage" class="purple-text">32.4MB</span><br>
+        PING: <span id="net-ping">12ms</span>
+    </div>
+
+    <!-- DETAILS MODAL -->
+    <div id="details-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">[X] CLOSE_CONNECTION</button>
+            <h2 id="modal-title" class="glitch-text" data-text="SYS_DETAILS">SYS_DETAILS</h2>
+            <div id="modal-gallery" class="modal-gallery">
+                <!-- Images injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN IMAGE VIEWER -->
+    <div id="image-viewer" class="viewer-overlay hidden">
+        <button id="close-viewer" class="close-btn">[X] CLOSE_IMAGE</button>
+        <img id="viewer-img" src="" alt="Fullscreen view">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
