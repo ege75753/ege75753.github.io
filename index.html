@@ -1,229 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VERAKAY_ // CENTRAL_SYSTEM</title>
-    <meta name="description" content="CLASSIFIED SYSTEM. UNAUTHORIZED ACCESS RECORDED.">
-    <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Michroma&family=Syncopate:wght@400;700&display=swap"
-        rel="stylesheet">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Night Call | Social Intro</title>
+  <meta name="description" content="A nocturnal neon social intro page inspired by midnight walks, city lights, and restless playlists.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #f6f4eb;
+      --muted: #c9c0b2;
+      --night: #09090b;
+      --panel: rgba(12, 14, 18, 0.7);
+      --line: rgba(246, 244, 235, 0.2);
+      --hot: #ff477e;
+      --mint: #39f5c5;
+      --sun: #ffd166;
+      --signal: #ff5d3d;
+      --shadow: rgba(0, 0, 0, 0.42);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--night);
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(9, 9, 11, 0.88), rgba(9, 9, 11, 0.5) 48%, rgba(9, 9, 11, 0.78)),
+        url("assets/January26114210.png") center / cover fixed,
+        #09090b;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 5px),
+        radial-gradient(circle at 80% 10%, rgba(255, 209, 102, 0.16), transparent 22rem);
+      mix-blend-mode: screen;
+      opacity: 0.58;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      position: relative;
+      width: min(1320px, calc(100% - 32px));
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 32px 0;
+      display: grid;
+      grid-template-columns: minmax(460px, 650px) 626px;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .intro {
+      display: grid;
+      gap: 28px;
+      max-width: 680px;
+    }
+
+    .tag {
+      width: fit-content;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(9, 9, 11, 0.46);
+      color: var(--sun);
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 11ch;
+      margin: 0;
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-size: clamp(4.2rem, 13vw, 9.4rem);
+      line-height: 0.82;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-shadow: 0 18px 42px var(--shadow);
+    }
+
+    .lead {
+      max-width: 560px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.7;
+    }
+
+    .profile {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 280px 330px;
+      gap: 16px;
+      align-items: center;
+      justify-self: end;
+    }
+
+    .portrait {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 736 / 965;
+      grid-column: 2;
+      grid-row: 1;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(9, 9, 11, 0.1), rgba(9, 9, 11, 0.82)),
+        url("assets/pfp.jpg") center / cover;
+      box-shadow: 0 24px 80px var(--shadow);
+    }
+
+    .profile-name {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 58px;
+      margin: 0;
+      text-align: center;
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-shadow: 0 8px 24px var(--shadow);
+    }
+
+    .profile-line {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 34px;
+      margin: 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+      text-shadow: 0 8px 24px var(--shadow);
+    }
+
+    .links {
+      display: grid;
+      gap: 10px;
+      grid-column: 1;
+      grid-row: 1;
+      align-self: center;
+    }
+
+    .playlists {
+      display: grid;
+      gap: 12px;
+    }
+
+    .playlist-frame {
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      background: rgba(9, 9, 11, 0.5);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.22);
+    }
+
+    .social {
+      min-height: 64px;
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 12px 10px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(16px);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .social:hover,
+    .social:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(57, 245, 197, 0.74);
+      background: rgba(20, 24, 28, 0.82);
+      outline: none;
+    }
+
+    .mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #f6f4eb;
+      color: #111;
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-weight: 800;
+    }
+
+    .social:nth-child(2) .mark {
+      background: var(--hot);
+      color: var(--ink);
+    }
+
+    .social:nth-child(3) .mark {
+      background: var(--mint);
+      color: #06100d;
+    }
+
+    .social:nth-child(4) .mark {
+      background: var(--sun);
+      color: #1c1505;
+    }
+
+    .social:nth-child(5) .mark {
+      background: var(--signal);
+      color: var(--ink);
+    }
+
+    .copy {
+      display: block;
+      min-width: 0;
+    }
+
+    .copy b {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .copy span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .arrow {
+      color: var(--sun);
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-weight: 700;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      z-index: 10;
+      min-width: min(340px, calc(100% - 32px));
+      padding: 13px 16px;
+      border: 1px solid rgba(57, 245, 197, 0.46);
+      border-radius: 8px;
+      background: rgba(9, 9, 11, 0.86);
+      color: var(--ink);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(16px);
+      font-size: 0.94rem;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 16px);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .ticker {
+      grid-column: 1 / -1;
+      min-height: 44px;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: rgba(246, 244, 235, 0.76);
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .ticker span {
+      display: inline-block;
+      padding: 13px 0;
+      animation: drift 22s linear infinite;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 1120px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      .page {
+        width: min(100% - 24px, 620px);
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding: 24px 0;
+        align-items: start;
+      }
+
+      .profile {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        justify-self: stretch;
+      }
+
+      h1 {
+        font-size: clamp(3.25rem, 19vw, 6rem);
+      }
+
+      .portrait {
+        grid-column: 1;
+        grid-row: 1;
+        min-height: 0;
+      }
+
+      .links {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .profile-name {
+        bottom: 58px;
+      }
+
+      .profile-line {
+        bottom: 34px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .social {
+        grid-template-columns: 40px 1fr;
+      }
+
+      .mark {
+        width: 40px;
+        height: 40px;
+      }
+
+      .arrow {
+        display: none;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="scanlines"></div>
-    <div class="vignette"></div>
-    <div class="noise-overlay"></div>
+  <main class="page">
+    <section class="intro" aria-label="Introduction">
+      <p class="tag">introduction site or whatever</p>
+      <h1>what?</h1>
+      <p class="lead"></p>
 
-    <!-- Decorative Left Panel mirroring the reference image's left sidebar -->
-    <aside class="dec-panel-left">
-        <div class="keyword-list">
-            <p>keyword :</p>
-            <ul>
-                <li>-secret</li>
-                <li>-maiden</li>
-                <li>-verakay</li>
-                <li>-purple rain</li>
-                <li>-jin</li>
-                <li>-bearfours</li>
-            </ul>
-        </div>
+      <section class="playlists" aria-label="Spotify playlists">
+        <iframe class="playlist-frame" data-testid="embed-iframe" src="https://open.spotify.com/embed/playlist/28xFqCCPMtHxaLMO0Ivsux?utm_source=generator&theme=0" height="152" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify playlist"></iframe>
+        <iframe class="playlist-frame" data-testid="embed-iframe" src="https://open.spotify.com/embed/playlist/0EO8QEoLC6gEeU25ReskHo?utm_source=generator" height="152" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify playlist"></iframe>
+      </section>
+    </section>
 
-        <div class="dec-image-box">
-            <div class="glitch-img"></div>
-            <div class="cross"></div>
-        </div>
+    <aside class="profile" aria-label="Social links">
+      <div class="portrait" aria-label="Night road visual">
+        <p class="profile-name">skeleton</p>
+        <p class="profile-line">breakcore enjoyer</p>
+      </div>
 
-        <div class="dec-date" title="LOCAL SYSTEM TIME">
-            <span id="sys-hour" class="d1">00</span>:<span id="sys-min" class="d2">00</span><span id="sys-sec"
-                class="d-tiny">00</span><br>
-            <span id="sys-day" class="d3">00</span>.<span id="sys-month" class="d4">00</span>
-        </div>
+      <nav class="links" aria-label="Social profiles">
+        <a class="social" href="https://www.instagram.com/egequitsreality/" target="_blank" rel="noreferrer">
+          <span class="mark">IG</span>
+          <span class="copy"><b>Instagram</b><span>@egequitsreality</span></span>
+          <span class="arrow">Visit</span>
+        </a>
+        <a class="social" href="https://open.spotify.com/user/2ct8dkus2azw8fp1zto50vzpf?si=7cc32b99f7194399" target="_blank" rel="noreferrer">
+          <span class="mark">SP</span>
+          <span class="copy"><b>Spotify</b><span>late clips and edits</span></span>
+          <span class="arrow">Visit</span>
+        </a>
+        <a class="social" href="#" data-copy-discord="skeleton_c">
+          <span class="mark">DC</span>
+          <span class="copy"><b>Discord</b><span>skeleton_c</span></span>
+          <span class="arrow">Copy</span>
+        </a>
+        <a class="social" href="https://steamcommunity.com/profiles/76561199062037710/" target="_blank" rel="noreferrer">
+          <span class="mark">ST</span>
+          <span class="copy"><b>Steam</b><span>egezem</span></span>
+          <span class="arrow">Visit</span>
+        </a>
+      </nav>
 
-        <div class="color-palette">
-            <div class="c1"></div>
-            <div class="c2"></div>
-            <div class="c3"></div>
-            <div class="c4"></div>
-            <div class="c5"></div>
-            <div class="c6"></div>
-        </div>
-
-        <div class="data-stream">
-            <p class="stream-title">UPLINK_DATA</p>
-            <p class="stream-value" id="stream-readout">0x000A8F</p>
-            <div class="mini-bar-graph" id="mini-bars">
-                <div class="mb"></div>
-                <div class="mb"></div>
-                <div class="mb"></div>
-                <div class="mb"></div>
-                <div class="mb"></div>
-            </div>
-        </div>
-
-        <div class="barcode-wrapper">
-            <div class="barcode"></div>
-            <p>PROSTHETICVISUAL</p>
-        </div>
     </aside>
 
-    <!-- Main Central Area -->
-    <main class="center-stage">
-        <!-- 1. HERO SECTION -->
-        <section id="hero" class="scroll-section">
-            <div class="hero-container">
-                <!-- Rotating Text -->
-                <div id="rotating-text-container" class="glitch-wrapper">
-                    <h1 id="main-word" class="hero-text glitch" data-text="HELLO WORLD">HELLO WORLD</h1>
-                    <div class="sub-word">[ STATUS: OMNIPRESENT ]</div>
-                </div>
-
-                <div class="decorative-crosshair">
-                    <div class="hline"></div>
-                    <div class="vline"></div>
-                    <div class="ring r1"></div>
-                    <div class="ring r2"></div>
-                </div>
-            </div>
-
-            <div class="scroll-indicator">
-                <span>SCROLL</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-        </section>
-
-        <!-- 2. PROJECTS SECTION -->
-        <section id="projects" class="scroll-section">
-            <h2 class="section-title">MY PROJECTS</h2>
-            <div class="grid-layout">
-                <!-- MSN Messenger Revival -->
-                <div class="data-card project-card">
-                    <div class="card-image img-msn">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <h3>MSNMessenger Revive</h3>
-                    <p>A full client and server revival project restoring the classic early 2000s chat experience.
-                        Custom networking, lobby system, and integrated games like Paint.IO and Gartic.</p>
-                    <div class="card-buttons">
-                        <a href="https://github.com" class="card-btn open-btn" target="_blank"><i
-                                class="fa-brands fa-github"></i> OPEN</a>
-                        <button class="card-btn detail-btn" data-project="msn"><i class="fa-solid fa-folder-open"></i>
-                            DETAILS</button>
-                    </div>
-                </div>
-
-                <!-- Celestial Roblox -->
-                <div class="data-card project-card">
-                    <div class="card-image img-celestial">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3>Celestial Executor</h3>
-                    <p>A high-performance Roblox script execution platform. Deep engine hooks, custom lua environment,
-                        and advanced bypass capabilities.</p>
-                    <div class="card-buttons">
-                        <button class="card-btn locked-btn"><i class="fa-solid fa-lock"></i> LOCKED</button>
-                        <button class="card-btn detail-btn" data-project="celestial"><i
-                                class="fa-solid fa-folder-open"></i> DETAILS</button>
-                    </div>
-                </div>
-
-                <!-- CS2 External -->
-                <div class="data-card project-card">
-                    <div class="card-image img-cs2">
-                        <i class="fa-solid fa-crosshairs"></i>
-                    </div>
-                    <h3>_not_done_</h3>
-                    <p>Out-of-process memory reader for Counter-Strike 2. Features kernel-level handles, minimal system
-                        footprint, and real-time radar mapping without hooking.</p>
-                    <div class="card-buttons">
-                        <button class="card-btn locked-btn"><i class="fa-solid fa-lock"></i> LOCKED</button>
-                        <button class="card-btn detail-btn" data-project="cs2"><i class="fa-solid fa-folder-open"></i>
-                            DETAILS</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. TERMINAL SECTION -->
-        <section id="footer-data" class="scroll-section">
-            <h2 class="section-title">UPLINK PORTAL</h2>
-            <div class="grid-layout" style="grid-template-columns: 1fr;">
-                <div class="data-card" style="text-align: center; border-color: var(--accent);">
-                    <h3>ESTABLISH CONNECTION</h3>
-                    <p style="margin-bottom: 2rem;">Awaiting manual override code.</p>
-                    <div class="hex-grid-small" style="margin: 0 auto; width: 100px;"></div>
-                </div>
-            </div>
-
-            <!-- Social Icons now act as footer -->
-            <div class="social-wrapper">
-                <a href="https://github.com/ege75753" class="social-icon" target="_blank"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://discord.com" class="social-icon" target="_blank"><i
-                        class="fa-brands fa-discord"></i></a>
-                <a href="https://open.spotify.com/user/2ct8dkus2azw8fp1zto50vzpf?si=57955d7eca9642d3"
-                    class="social-icon" target="_blank"><i class="fa-brands fa-spotify"></i></a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Corner Diagnostics moved to fixed position outside main -->
-    <div class="diag-top-right" style="position: fixed;">
-        <i class="fa-solid fa-satellite-dish"></i> SYS_ACTIVE<br>
-        SEC_LVL: NULL
+    <div class="ticker" aria-hidden="true">
+      <span>Hello World / Hello World / Hello World / Hello World / Hello World / Hello World / </span>
+      <span>Hello World / Hello World / Hello World / Hello World / Hello World / Hello World / </span>
     </div>
-    <div class="diag-bottom-right" style="position: fixed;">
-        <div class="hex-grid-small"></div>
-        MEM_ALLOC: <span id="mem-usage" class="purple-text">32.4MB</span><br>
-        PING: <span id="net-ping">12ms</span>
-    </div>
+  </main>
 
-    <!-- DISCORD MODAL -->
-    <div id="discord-modal" class="modal-overlay hidden">
-        <div class="modal-content" style="text-align: center; max-width: 450px;">
-            <button id="close-discord" class="close-btn">[X] CLOSE</button>
-            <h2 class="glitch" data-text="SYS_COMMS"
-                style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 2rem; color: var(--text-main); text-transform: uppercase;">
-                SYS_COMMS</h2>
-            <div class="data-card"
-                style="padding: 2.5rem; border-color: var(--accent); background: rgba(157, 0, 255, 0.05); display: flex; flex-direction: column; align-items: center;">
-                <i class="fa-brands fa-discord"
-                    style="font-size: 4rem; color: var(--accent); margin-bottom: 1.5rem; text-shadow: 0 0 15px var(--accent-glow);"></i>
-                <div
-                    style="font-size: 2rem; font-family: var(--font-mono); font-weight: bold; color: var(--text-main); letter-spacing: 2px;">
-                    skeleton_c
-                </div>
-                <div
-                    style="font-size: 0.85rem; color: var(--accent); margin-top: 1.5rem; letter-spacing: 4px; border-top: 1px solid rgba(157,0,255,0.3); padding-top: 1rem; width: 100%;">
-                    [ STATUS: UNKNOWN ]
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-    <!-- DETAILS MODAL -->
-    <div id="details-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button id="close-modal" class="close-btn">[X] CLOSE_CONNECTION</button>
-            <h2 id="modal-title" class="glitch-text" data-text="SYS_DETAILS">SYS_DETAILS</h2>
-            <div id="modal-gallery" class="modal-gallery">
-                <!-- Images injected via JS -->
-            </div>
-        </div>
-    </div>
+  <script>
+    const discordCopy = document.querySelector("[data-copy-discord]");
+    const toast = document.querySelector(".toast");
+    let toastTimer;
 
-    <!-- FULLSCREEN IMAGE VIEWER -->
-    <div id="image-viewer" class="viewer-overlay hidden">
-        <button id="close-viewer" class="close-btn">[X] CLOSE_IMAGE</button>
-        <img id="viewer-img" src="" alt="Fullscreen view">
-    </div>
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("is-visible");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("is-visible");
+      }, 2400);
+    }
 
-    <script src="script.js"></script>
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const copyField = document.createElement("textarea");
+      copyField.value = text;
+      copyField.setAttribute("readonly", "");
+      copyField.style.position = "fixed";
+      copyField.style.opacity = "0";
+      document.body.appendChild(copyField);
+      copyField.select();
+      document.execCommand("copy");
+      copyField.remove();
+    }
+
+    discordCopy.addEventListener("click", async (event) => {
+      event.preventDefault();
+      const username = discordCopy.dataset.copyDiscord;
+
+      try {
+        await copyText(username);
+        showToast("copied discord username to clipboard: " + username);
+      } catch (error) {
+        showToast("could not copy discord username: " + username);
+      }
+    });
+  </script>
 </body>
-
 </html>
