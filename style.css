@@ -223,8 +223,6 @@ h1 span:last-child { color: transparent; -webkit-text-stroke: 2px var(--paper); 
 }
 
 .hero__subline p { margin: 0; }
-.coordinates { color: var(--cyan); text-align: right; }
-
 .identity {
   position: relative;
   perspective: 1000px;
@@ -374,8 +372,6 @@ h1 span:last-child { color: transparent; -webkit-text-stroke: 2px var(--paper); 
 }
 
 .section-heading h2 em { color: var(--pink); font-style: normal; }
-.section-heading__note { margin: 30px 0 0; color: var(--muted); font: 500 11px/1.5 var(--mono); }
-
 .playlist-stack { display: grid; gap: 22px; }
 
 .playlist-item {
@@ -418,21 +414,6 @@ h1 span:last-child { color: transparent; -webkit-text-stroke: 2px var(--paper); 
 .afterimage__visual img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.3) contrast(1.1); transition: transform 1s ease; }
 .afterimage__visual:hover img { transform: scale(1.03); }
 
-.afterimage__stamp {
-  position: absolute;
-  z-index: 2;
-  left: clamp(18px, 4vw, 68px);
-  bottom: clamp(18px, 4vw, 58px);
-  display: flex;
-  align-items: flex-end;
-  gap: 20px;
-  color: var(--paper);
-  text-shadow: 0 3px 20px rgba(0,0,0,.5);
-}
-
-.afterimage__stamp span { font: 400 clamp(3.5rem, 8vw, 8rem)/.75 var(--display); }
-.afterimage__stamp small { font: 600 9px/1.4 var(--mono); text-transform: uppercase; }
-
 .afterimage__copy {
   display: flex;
   flex-direction: column;
@@ -442,7 +423,7 @@ h1 span:last-child { color: transparent; -webkit-text-stroke: 2px var(--paper); 
 }
 
 .afterimage .eyebrow { color: #686b6b; }
-.afterimage blockquote { margin: 0; font: 400 clamp(2.4rem, 4.8vw, 5.2rem)/.96 var(--display); text-transform: uppercase; }
+.afterimage__copy h2 { margin: 0; font: 400 clamp(2.4rem, 4.8vw, 5.2rem)/.96 var(--display); text-transform: uppercase; }
 .afterimage__copy > p:not(.eyebrow) { margin: 30px 0 50px; color: #5b5e5e; font: 500 11px/1.5 var(--mono); }
 
 .copy-big {
@@ -556,7 +537,6 @@ body.dimmed #night-sky { opacity: .18; }
   .playlist-item { padding: 10px; }
   .playlist-item__meta span:last-child { display: none; }
   .afterimage__visual { min-height: 58svh; }
-  .afterimage__stamp { align-items: flex-start; flex-direction: column; }
   .afterimage__copy { padding: 68px 20px; }
 }
 
